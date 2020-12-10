@@ -6,13 +6,20 @@ describe Player do
   it 'returns its own name' do
     expect(player.name).to eq "Bob"
   end
+
   it "starts with STARTING_POINTS hit points" do
     expect(player.hit_points).to eq(Player::STARTING_POINTS)
   end
 
-  describe "#attack" do
+  describe '#attack' do
+    it 'responds to the attack method' do
+      expect(player).to respond_to(:attack)
+    end
+  end
+
+  describe "#receive_damage" do
     it "removes 10 hit points" do
-      player.attack
+      player.receive_damage
       expect(player.hit_points).to eq(Player::STARTING_POINTS - 10)
     end
   end
