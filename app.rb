@@ -21,7 +21,7 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
-  get '/attacked' do
+  get '/attack' do
     @player1_name = $new_game.player1.name
     @player2_name = $new_game.player2.name
     $new_game.attack($new_game.player2)
@@ -29,4 +29,8 @@ class Battle < Sinatra::Base
     # redirect '/play'
     erb(:attack)
   end
+
+  # get 'player1turn' do
+  #   erb(:play)
+  # end
 end
