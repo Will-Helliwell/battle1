@@ -1,6 +1,8 @@
-<h1> Ouch, said <%= @player2_name %> </h1>
-<h3> <%= @player2_name %> hit points: <%= @player2_points %> </h3>
-<h5> Now it's <%=@player1_name%>'s go</h5>
-<%# <form action="/player1turn">
-<input type='submit' value='Oi, have some of this!'>
-</form> %>
+<h1> Ouch, said <%= $new_game.current_turn.name %> </h1>
+<h3> <%= @player1.name %> hit points: <%= @player1.hit_points %> </h3>
+<h3> <%= @player2.name %> hit points: <%= @player2.hit_points %> </h3>
+<h5> Now it's <%=$new_game.current_turn.name%>'s go</h5>
+<form action="/attack">
+  <input type='submit' value="Oi, have some of this bellowed <%=$new_game.current_turn.name%>!">
+</form>
+<!-- <p> <%= $new_game.opponent.name %> </p> -->
