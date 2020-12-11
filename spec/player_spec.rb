@@ -11,12 +11,6 @@ describe Player do
     expect(player.hit_points).to eq(Player::STARTING_POINTS)
   end
 
-  describe '#attack' do
-    it 'responds to the attack method' do
-      expect(player).to respond_to(:attack)
-    end
-  end
-
   describe "#receive_damage" do
     it "removes 10 hit points" do
       player.receive_damage
