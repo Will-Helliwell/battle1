@@ -19,6 +19,11 @@ class Game
     @current_turn = opponent_of(@current_turn)
   end
 
+  def lose
+    return true if @opponent.hit_points <= 0
+    false
+  end
+
   private
 
   def opponent_of(player)

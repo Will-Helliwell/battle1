@@ -25,8 +25,12 @@ class Battle < Sinatra::Base
     @player1 = $new_game.player1
     @player2 = $new_game.player2
     $new_game.attack($new_game.opponent)
+    redirect '/lose' if $new_game.lose == true
     $new_game.switch_turns
     erb(:attack)
   end
 
+  get '/lose' do
+    erb(:lose)
+  end
 end
